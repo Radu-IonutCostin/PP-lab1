@@ -8,4 +8,8 @@ public class TextProcessor {
     public static String eliminaPunctuatie(String text) {
         return text.replaceAll("[^a-zA-Z0-9\\s]", "");
     }
+    public static String eliminaSpatiiMultiple(String text) {
+        return text.replaceAll("\\s+", " ").trim();
+    }
+
 }
