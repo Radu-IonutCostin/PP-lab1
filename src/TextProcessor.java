@@ -11,5 +11,8 @@ public class TextProcessor {
     public static String eliminaSpatiiMultiple(String text) {
         return text.replaceAll("\\s+", " ").trim();
     }
+    public static String filtreazaNumere(String text) {
+        return text.replaceAll("\\b\\d+\\b", "");
+    }
 
 }
