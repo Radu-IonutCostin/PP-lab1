@@ -14,5 +14,29 @@ public class TextProcessor {
     public static String filtreazaNumere(String text) {
         return text.replaceAll("\\b\\d+\\b", "");
     }
+    public static void main(String[] args) {
+        try {
+            String text = citesteFisier("input.txt");
+            System.out.println("=== TEXT ORIGINAL ===");
+            System.out.println(text);
 
-}
+            String faraPunctuatie = eliminaPunctuatie(text);
+            System.out.println("\n=== DUPA ELIMINARE PUNCTUATIE ===");
+            System.out.println(faraPunctuatie);
+
+
+            String faraNumere = filtreazaNumere(faraPunctuatie);
+            System.out.println("\n=== DUPA FILTRARE NUMERE ===");
+            System.out.println(faraNumere);
+
+            String faraSpatii = eliminaSpatiiMultiple(faraNumere);
+            System.out.println("\n=== DUPA ELIMINARE SPATII MULTIPLE ===");
+            System.out.println(faraSpatii);
+
+        } catch (IOException e) {
+            System.out.println("Eroare la citirea fisierului: " + e.getMessage());
+        }
+    }
+
+
+    }
